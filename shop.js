@@ -1,6 +1,3 @@
-
-
-
 const AM_PM_TIME = document.getElementById('time-AP');
 const MIL_TIME = document.getElementById('time-mill');
 
@@ -15,19 +12,18 @@ const MIL_SECONDS = document.getElementById('seconds');
 
 const SWITCHER_BUTTON = document.getElementById('switch-button');
 
-function switcher (){
+function switcher() {
     let temp = AM_PM_TIME.style.display;
-    if(temp === "none"){
+    if (temp === "none") {
         AM_PM_TIME.style.display = "block";
         MIL_TIME.style.display = "none";
-    }
-    else{
+    } else {
         AM_PM_TIME.style.display = "none";
         MIL_TIME.style.display = "block";
     }
 }
 
-function updateClock (){
+function updateClock() {
     let temp = new Date();
     let temp_hours = temp.getHours();
     let temp_minutes = temp.getMinutes();
@@ -41,21 +37,21 @@ function updateClock (){
     MIL_HOUR.innerText = temp_hours;
 
 
-    if(temp_hours >= 12){
+    if (temp_hours >= 12) {
         AM_PM_PERIOD.innerText = "PM"
-    }else{
+    } else {
         AM_PM_PERIOD.innerText = "AM"
     }
 
-    if(temp_hours > 12){
+    if (temp_hours > 12) {
         AM_PM_HOUR.innerText = temp_hours - 12;
     }
 
 }
 
-function initClock (){
+function initClock() {
     updateClock();
-    window.setInterval('updateClock()',1);
+    window.setInterval('updateClock()', 1);
 }
 
 
